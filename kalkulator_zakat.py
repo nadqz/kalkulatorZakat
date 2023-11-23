@@ -36,7 +36,7 @@ def zakat_penghasilan():
         return
     
     #Menghitung Besaran Nishab Zakat Penghasilan per Bulan
-    nisab_penghasilan = (7.083 * harga_emas)
+    nisab_penghasilan = (85 / 12 * harga_emas)
     st.write("Besaran Nishab Zakat Penghasilan per Bulan: ", nisab_penghasilan, "IDR")
 
     #Memeriksa Penghasilan Setelah Hutang lebih besar daripada Nisab
