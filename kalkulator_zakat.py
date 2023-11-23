@@ -48,3 +48,5 @@ def zakat_penghasilan():
     else:
         st.write("Penghasilan Anda belum mencapai Nisab untuk Zakat Penghasilan.")
 
+    # Run the function
+    zakat_penghasilan()
