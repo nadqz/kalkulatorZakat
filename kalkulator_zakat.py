@@ -35,10 +35,11 @@ def zakat_penghasilan():
         st.write("Harga Emas Tidak Boleh Bernilai 0")
         return
     
-    #Menghitung Nisab Zakat Penghasilan per Bulan
-    nisab_penghasilan = (6828806 / harga_emas)
-    
-    #Memeriksa Penghasilan Setelah Hutang
+    #Menghitung Besaran Nishab Zakat Penghasilan per Bulan
+    nisab_penghasilan = (7.083 * harga_emas)
+    st.write("Besaran Nishab Zakat Penghasilan per Bulan: ", nisab_penghasilan, "IDR")
+
+    #Memeriksa Penghasilan Setelah Hutang lebih besar daripada Nisab
     if penghasilan_setelah_hutang >= nisab_penghasilan:
         st.write("Penghasilan Anda melebihi Nisab untuk Zakat Penghasilan.")
 
