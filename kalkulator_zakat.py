@@ -1,28 +1,39 @@
 import streamlit as st
 
-st.title("Kalkulator Zakat Penghasilan")
-st.write("---")
-st.write("Semoga Kalkulator Zakat Dapat Membantu!^^")
-#input 1
-    a = st.number_input("Masukkan Penghasilan/Bulan")
-    b = st.number_input("Penghasilan Lainnya/Bulan")
-    c = st.number_input("Hutang/Cicilan")
-    d = st.number_input("Jumlah Penghasilan/Bulan")
+def zakat_penghasilan():
+    st.title("Kalkulator Zakat Penghasilan")
+    st.write("---")
+    st.write("Zakat penghasilan atau zakat profesi adalah zakat yang wajib dibayarkan atas pendapatan yang diperoleh dari pekerjaan atau profesi, sepeti gaji. Zakat penghasilan termasuk dalam kategori zakat mal, yang merupakan kewajiban membayar zakat karena memiliki atau menyimpan harta seperti uang dan emas.")
 
+    #Input Penghasilan per Bulan
+    penghasilan_bulanan = st.number_input("Penghasilan per Bulan (IDR)")
+
+    #Input Penghasilan Lainnya per Bulan
+    penghasilan_lainnya = st.number_input("Penghasilan Lainnya per Bulan (IDR)")
+
+    #Input Hutang atau Cicilan
+    hutang_cicilan = st.number_input("Hutang atau Cicilan per Bulan (IDR)")
+
+    #Menghitung Jumlah Penghasilan Setelah Dikurangi Hutang atau Cicilan
+    penghasilan_setelah_hutang = penghasilan_bulanan + penghasilan_lainnya - hutang_cicilan
+
+    #Menampilkan Jumlah Penghasilan yang Telah Dikalkulasi
+    st.write("JUmlah Penghasilan Bersih per Bulan: ", penghasilan_setelah_hutang, "IDR")
+    
     st.title("Nisab Zakat Penghasilan")
-    st.write("Nisab merupakan batas minimum jumlah harta yang harus terpenuhi agar dapat dianggap sebagai")
-    st.write("harta yang wajib dizakati. Zakat hanya diberlakukan pada penghasilan yang melampaui nisab")
-    st.write("tersebut. Untuk Zakat Penghasilan, nisab yang ditetapkan setara dengan 85 gram emas.")
-    a = st.number_input("Harga Emas Saat Ini (per Gram)")
-    b = st.number_input("Besar Nisab Zakat Penghasilan/Bulan")
-    c = st.number_input("Wajib/Tidak Membayar Zakat Penghasilan:")
-    d = st.number_input("Jumlah yang Perlu Dibayarkan/Bulan")
-    wealth = st.number_input("Total kekayaan Anda (dalam rupiah)")
-    nisab = st.number_input("Nisab (dalam rupiah)", value=0)
+    st.write("Nisab merupakan batas minimum jumlah harta yang harus terpenuhi agar dapat dianggap sebagai harta yang wajib dizakati. Zakat hanya diberlakukan pada penghasilan yang melampaui nisab tersebut. Untuk Zakat Penghasilan, nisab yang ditetapkan setara dengan 85 gram emas.")
+    st.header("Niat Zakat Penghasilan")
+    st.subheader("نَوَيْتُ أَنْ أُخْرِجَ زَكَاةَ مَالِى فَرْضًا لِلَّهِ تَعَالَى")
+    st.caption("Nawaitu an ukhrija zakatadz maali fardhan lillahi ta’ala.")
+    st.write("Artinya: Aku niat mengeluarkan zakat hartaku fardhu karena Allah Ta'ala.")
 
-    if st.button("Hitung"):
-        result = calculate_zakat(nisab, wealth)
-        st.write(result)
+    #Input Harga Emas Saat Ini per Gram
+    harga_emas = st.number_input("Harga Emas Saat Ini per Gram (IDR)")
 
-if __name__ == "__main__":
-    main()
+    #Menentukan Apakah Harga Emas Bernilai 0
+    if harga_emas == 0:
+        st.write("Harga Emas Tidak Boleh Bernilai 0!")
+        return
+    
+    #Menghitung Nisab Zakat Penghasilan per Bulan
+    nisab_penghasilan = (6828806 / harga_emas)
