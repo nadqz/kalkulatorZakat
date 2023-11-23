@@ -37,8 +37,8 @@ def zakat_penghasilan():
     
     #Menghitung Nisab Zakat Penghasilan per Bulan
     nisab_penghasilan = (6828806 / harga_emas)
-
-    #Memeriksa Penghasilan Setelah Hutang lebih besar daripada Nisab
+    
+    #Memeriksa Penghasilan Setelah Hutang
     if penghasilan_setelah_hutang >= nisab_penghasilan:
         st.write("Penghasilan Anda melebihi Nisab untuk Zakat Penghasilan.")
 
@@ -47,6 +47,6 @@ def zakat_penghasilan():
         st.write("Jumlah Zakat Penghasilan yang Harus Dibayarkan: ", zakat_amount, "IDR")
     else:
         st.write("Penghasilan Anda belum mencapai Nisab untuk Zakat Penghasilan.")
-
+        
 # Run the function
 zakat_penghasilan()
