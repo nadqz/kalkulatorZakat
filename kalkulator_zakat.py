@@ -18,7 +18,7 @@ def zakat_penghasilan():
     penghasilan_setelah_hutang = penghasilan_bulanan + penghasilan_lainnya - hutang_cicilan
 
     #Menampilkan Jumlah Penghasilan yang Telah Dikalkulasi
-    st.write("JUmlah Penghasilan Bersih per Bulan: ", penghasilan_setelah_hutang, "IDR")
+    st.write("Jumlah Penghasilan Bersih per Bulan: ", penghasilan_setelah_hutang, "IDR")
     
     st.title("Nisab Zakat Penghasilan")
     st.write("Nisab merupakan batas minimum jumlah harta yang harus terpenuhi agar dapat dianggap sebagai harta yang wajib dizakati. Zakat hanya diberlakukan pada penghasilan yang melampaui nisab tersebut. Untuk Zakat Penghasilan, nisab yang ditetapkan setara dengan 85 gram emas.")
@@ -32,7 +32,7 @@ def zakat_penghasilan():
 
     #Menentukan Apakah Harga Emas Bernilai 0
     if harga_emas == 0:
-        st.write("Harga Emas Tidak Boleh Bernilai 0!")
+        st.write("Harga Emas Tidak Boleh Bernilai 0")
         return
     
     #Menghitung Nisab Zakat Penghasilan per Bulan
