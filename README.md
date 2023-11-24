@@ -14,4 +14,6 @@ The calculator I created here is for zakat on expenditure or income, also known 
 ## Demo
 ![alt text](https://github.com/nadqz/kalkulatorZakat/blob/main/image/kalkulatorZakat.jpg?raw=true)
 
+---
 
+The nisab for income zakat is 85 grams of gold per year. The income zakat rate is 2.5%. In practice, income zakat can be fulfilled monthly, with the monthly nisab value equivalent to one twelfth of 85 grams of gold, at a rate of 2.5%. Therefore, if the monthly income exceeds the monthly nisab value, it is mandatory to pay 2.5% of that income as zakat.
