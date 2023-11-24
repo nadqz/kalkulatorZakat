@@ -12,3 +12,4 @@ The calculator I created here is for zakat on expenditure or income, also known 
 </li>
 
 
+
